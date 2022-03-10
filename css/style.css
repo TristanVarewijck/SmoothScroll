@@ -51,7 +51,7 @@ nav {
   /* margin-left: 2em; */
   margin-right: 2em;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: flex-end;
 }
 
@@ -151,7 +151,6 @@ section > div div:nth-of-type(2) {
 section > div div:nth-of-type(2) p:first-of-type {
   font-size: 1.2em;
   margin-top: 1em;
-  transition: 0.2s ease-in-out;
 }
 
 section > div div:nth-of-type(2) p:first-of-type span:first-of-type {
@@ -235,5 +234,89 @@ footer button:first-of-type span {
 @media screen and (min-width: 1600px) {
   p {
     font-size: 16px;
+  }
+}
+
+/* COOL CUBE with class*/
+.cube-container {
+  position: relative;
+  margin-left: 2em;
+}
+
+.cube-container span {
+  position: absolute;
+  top: calc(0% - 10px);
+  left: calc(100% - 10px);
+  width: 65px;
+  height: 65px;
+  background: var(--white);
+  opacity: 0;
+  z-index: 1;
+}
+
+.cube-container span:hover + div:first-of-type div {
+  width: 45px;
+  height: 45px;
+  border: 3px white dashed;
+}
+
+.cube-container > div {
+  margin-bottom: 22.5px;
+  transform-style: preserve-3d;
+  animation: turn 40s linear infinite;
+}
+
+.cube-container > div div {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border: 3px var(--white) solid;
+  transition: 0.4s linear;
+}
+
+/* cube sides */
+.cube-container > div div:nth-of-type(1) {
+  transform: translateZ(22.5px);
+}
+.cube-container > div div:nth-of-type(2) {
+  transform: rotateX(90deg) translateZ(22.5px);
+}
+.cube-container > div div:nth-of-type(3) {
+  transform: rotateY(90deg) translateZ(22.5px);
+}
+.cube-container > div div:nth-of-type(4) {
+  transform: rotateY(-90deg) translateZ(22.5px);
+}
+.cube-container > div div:nth-of-type(5) {
+  transform: rotateX(-90deg) translateZ(22.5px);
+}
+.cube-container > div div:nth-of-type(6) {
+  transform: rotateY(-180deg) translateZ(22.5px);
+}
+
+/* unending turn  */
+@keyframes turn {
+  0% {
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(90deg) rotateY(40deg); /* + rotate Y gives it a 2 demensional rotate;  */
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+/* transform on hover */
+@keyframes transform {
+  0% {
+    width: 35px;
+    height: 35px;
+    border: 3px white solid;
+  }
+  100% {
+    width: 15px;
+    height: 15px;
+    border: 3px white dashed;
   }
 }

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>test</title>
+    <title>Tristan Varewijck - Portfolio</title>
     <script src="https://unpkg.com/locomotive-scroll@4.1.3/dist/locomotive-scroll.min.js"></script>
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/locomotiveConfig.css" />
@@ -14,7 +14,24 @@
   </head>
   <body>
     <nav>
-      <button><span class="material-icons md-24"> menu </span></button>
+      <!-- moving cube -->
+      <div class="cube-container">
+        <!-- after element -->
+        <span></span>
+        <!-- rotating container box -->
+        <div>
+          <!-- cube sides -->
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+
+      <!-- hamburger -->
+      <button><span class="material-icons md-24">menu</span></button>
     </nav>
     <main data-scroll-container>
       <!-- 1 -->
@@ -128,14 +145,18 @@
     </main>
 
     <footer>
+      <!-- to left button -->
       <button>
         <span class="material-icons md-24"> arrow_right_alt </span>
       </button>
 
+      <!-- to right button -->
       <button>
         <span class="material-icons md-24"> arrow_right_alt </span>
       </button>
     </footer>
+
+    <!-- </section> -->
     <script src="./index.js"></script>
     <script src="./scripts/app.js"></script>
   </body>
