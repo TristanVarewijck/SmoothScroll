@@ -27,7 +27,7 @@ html.has-scroll-dragging {
   height: 100%;
 }
 
-/* .c-scrollbar {
+.c-scrollbar {
   display: none;
   position: absolute;
   right: 0;
@@ -76,4 +76,4 @@ html.has-scroll-dragging {
 [data-scroll-direction="horizontal"] .c-scrollbar_thumb {
   right: auto;
   bottom: 0;
-} */
+}

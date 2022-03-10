@@ -4,12 +4,32 @@
 :root {
   --white: #ffffff;
   --black: #151515;
+  --blackRGB: 21, 21, 21;
+  --whiteRGB: 255, 255, 255;
 }
+
+/* * {
+  overflow: hidden;
+} */
 
 body {
   padding: 0;
   margin: 0;
   font-family: "Rubik", sans-serif;
+}
+
+/* pre fixes */
+.material-icons.md-18 {
+  font-size: 18px;
+}
+.material-icons.md-24 {
+  font-size: 24px;
+}
+.material-icons.md-36 {
+  font-size: 36px;
+}
+.material-icons.md-48 {
+  font-size: 48px;
 }
 
 h1,
@@ -21,7 +41,34 @@ span {
   display: block;
 }
 
-/* SECOND SECTION */
+nav {
+  /* background: green; */
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  width: 100vw;
+  height: 5em;
+  /* margin-left: 2em; */
+  margin-right: 2em;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+nav button {
+  border-radius: 50%;
+  border: 1px var(--white) solid;
+  color: var(--white);
+  width: 45px;
+  height: 45px;
+  background: rgba(var(--whiteRGB), 0);
+  margin-right: 2em;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 main:nth-of-type(1) {
   display: flex;
 }
@@ -31,41 +78,64 @@ main:nth-of-type(1) section {
   margin-right: -1px; /* for now its ok */
   padding: 0;
   position: relative;
-  background-size: cover;
   color: var(--white);
-
   flex: 0 0 33.3333%;
 }
 
-main:nth-of-type(1) section:nth-of-type(1) {
-  background-image: url("../assets/images/picture.jpeg");
+main:nth-of-type(1) section::before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../assets/images/picture-1.jpg");
+  background-size: cover;
+  filter: grayscale(100%);
 }
 
-main:nth-of-type(1) section:nth-of-type(2) {
-  background-image: url("../assets/images/picture-2.jpeg");
+main:nth-of-type(1) section:hover::before {
+  filter: none;
+  transition: 0.5s linear;
 }
 
-main:nth-of-type(1) section:nth-of-type(3) {
-  background-image: url("../assets/images/picture-3.jpeg");
+main:nth-of-type(1) section:nth-of-type(1)::before {
+  background-image: url("../assets/images/picture-1.jpg");
 }
 
-main:nth-of-type(1) section:nth-of-type(4) {
-  background-image: url("../assets/images/picture-4.jpeg");
+main:nth-of-type(1) section:nth-of-type(2)::before {
+  background-image: url("../assets/images/picture-2.jpg");
 }
 
-main:nth-of-type(1) section:nth-of-type(5) {
+main:nth-of-type(1) section:nth-of-type(3):before {
+  background-image: url("../assets/images/picture-3.jpg");
+}
+
+main:nth-of-type(1) section:nth-of-type(4):before {
+  background-image: url("../assets/images/picture-4.jpg");
+}
+
+main:nth-of-type(1) section:nth-of-type(5):before {
   background-image: url("../assets/images/picture-5.jpg");
 }
 
-main:nth-of-type(1) section:nth-of-type(6) {
+main:nth-of-type(1) section:nth-of-type(6):before {
   background-image: url("../assets/images/picture-6.jpg");
 }
 
-main:nth-of-type(1) section > div {
-  position: absolute;
-  left: 5%;
-  bottom: 25%;
+main:nth-of-type(1) section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
+
+main:nth-of-type(1) section > div {
+  position: relative;
+  margin-bottom: 10em;
+  padding-left: 2em;
+}
+
+/* inside sections  */
 
 h1 span {
   font-size: 3.9vw;
@@ -74,9 +144,67 @@ h1 span {
   letter-spacing: 1.5px;
 }
 
-p {
+section > div div:nth-of-type(2) {
+  overflow: hidden;
+}
+
+section > div div:nth-of-type(2) p:first-of-type {
   font-size: 1.2em;
   margin-top: 1em;
+  transition: 0.2s ease-in-out;
+}
+
+section > div div:nth-of-type(2) p:first-of-type span:first-of-type {
+  margin-bottom: 4px;
+}
+
+section > div div:nth-of-type(2) p:nth-of-type(2) {
+  font-weight: 300;
+  margin-top: 2em;
+  opacity: 0.9;
+}
+
+footer {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  width: 100vw;
+  height: 5em;
+  /* margin-left: 2em; */
+  margin-right: 2em;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer button {
+  border-radius: 50%;
+  border: none;
+  width: 45px;
+  height: 45px;
+  background: rgba(var(--whiteRGB), 0.6);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer button:nth-of-type(1) {
+  margin-left: 2em;
+}
+
+footer button:nth-of-type(2) {
+  margin-right: 2em;
+}
+
+footer button span {
+  color: var(--black);
+  font-size: 36px;
+  margin: 0;
+  padding: 0;
+}
+
+footer button:first-of-type span {
+  transform: rotate(180deg);
 }
 
 /* desktop first  */
