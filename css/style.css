@@ -310,20 +310,19 @@ footer button {
 
 footer button:nth-of-type(1) {
   margin-left: 2em;
-  transform: rotate(180deg);
 }
 
 footer button:nth-of-type(2) {
   margin-right: 2em;
 }
 
-footer button:first-of-type span {
-  transform: rotate(180deg);
-}
-
 footer button:hover > span {
   width: calc(100px + 45px);
   opacity: 1;
+}
+
+footer button:hover > div {
+  background: rgba(var(--blackRGB), 1);
 }
 
 footer button > div {
