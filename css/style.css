@@ -316,15 +316,6 @@ footer button:nth-of-type(2) {
   margin-right: 2em;
 }
 
-footer button:hover > span {
-  width: calc(100px + 45px);
-  opacity: 1;
-}
-
-footer button:hover > div {
-  background: rgba(var(--blackRGB), 1);
-}
-
 footer button > div {
   border-radius: 50%;
   border: 1px var(--white) solid;
@@ -368,6 +359,26 @@ footer button > span {
   opacity: 0;
   transition: 0.2s ease;
   z-index: -1;
+}
+
+footer button:hover > span {
+  width: calc(100px + 45px);
+  opacity: 1;
+}
+
+footer button:hover > div {
+  background: rgba(var(--blackRGB), 1);
+}
+
+footer button:first-of-type > span {
+  left: calc(100% - 45px);
+  right: 0;
+  padding: 0 20px 0 0;
+  align-items: flex-end;
+}
+
+footer button:first-of-type div span {
+  transform: rotate(180deg);
 }
 
 /* desktop first  */
