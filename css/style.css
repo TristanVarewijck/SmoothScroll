@@ -12,24 +12,26 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Rubik", sans-serif;
+  cursor: none;
 }
 
 .material-icons {
   padding: 0;
   margin: 0;
+  font-size: var(--iconSize);
 }
 /* icon pre fixes */
 .material-icons.md-18 {
-  font-size: 18px;
+  --iconSize: 18px;
 }
 .material-icons.md-24 {
-  font-size: 24px;
+  --iconSize: 24px;
 }
 .material-icons.md-36 {
-  font-size: 36px;
+  --iconSize: 36px;
 }
 .material-icons.md-48 {
-  font-size: 48px;
+  --iconSize: 48px;
 }
 
 h1,
@@ -44,25 +46,24 @@ span {
 button {
   background: none;
   border: none;
-  cursor: pointer;
+  cursor: none;
 }
 
 nav {
   position: absolute;
-  z-index: 1;
   top: 0;
   width: 100vw;
   height: 5em;
-  margin-right: 2em;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  z-index: 1;
 }
 
 /* COOL CUBE with class*/
 .cube-container {
   position: relative;
-  margin-left: 2em;
+  margin: 0 0 0 2em;
 }
 
 .cube-container span {
@@ -79,7 +80,7 @@ nav {
 .cube-container span:hover + div:first-of-type div {
   width: 45px;
   height: 45px;
-  border: 2px white solid;
+  border: 2px var(--white) solid;
 }
 
 .cube-container > div {
@@ -94,6 +95,10 @@ nav {
   height: 25px;
   border: 3px var(--white) solid;
   transition: 0.4s linear;
+
+  /* var(--angle)
+
+ --angle: 90deg */
 }
 
 /* cube sides */
@@ -130,7 +135,6 @@ nav {
 }
 
 /* HAMBURGER BUTTON */
-
 .menuButton {
   position: relative;
 }
@@ -158,7 +162,7 @@ nav {
   align-items: center;
   justify-content: center;
   padding: 0;
-  transition: 0.4s ease;
+  transition: 0.2s ease;
 }
 
 /* BUTTON FLIP OUT */
@@ -167,11 +171,7 @@ nav {
   color: var(--white);
   font-weight: 400;
   font-size: 14px;
-
-  border-top-left-radius: 50px;
-  border-bottom-left-radius: 50px;
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
+  border-radius: 50px;
 
   display: flex;
   flex-direction: column;
@@ -218,7 +218,6 @@ main:nth-of-type(1) section::before {
   left: 0;
   width: 100%;
   height: 100vh;
-  background-image: url("../assets/images/picture-1.jpg");
   background-size: cover;
   filter: grayscale(100%);
   transition: 0.5s ease;
@@ -226,7 +225,6 @@ main:nth-of-type(1) section::before {
 
 main:nth-of-type(1) section:hover::before {
   filter: none;
-  /* transition: 0.5s linear; */
 }
 
 /* INDIVIDUAL SECTIONS */
@@ -258,45 +256,54 @@ main:nth-of-type(1) section:nth-of-type(6):before {
 main:nth-of-type(1) section > div {
   /* content container */
   position: relative;
-  margin-bottom: 10em;
-  padding-left: 2em;
+  margin: 0 0 10em 0;
+  padding: 0 0 0 2em;
 }
 
-h1 span {
-  font-size: 3.9vw;
+main:nth-of-type(1) section:hover + div h1 span {
   display: block;
+  font-size: 3.9vw;
   font-weight: 500;
   letter-spacing: 1.5px;
 }
 
-section > div div:nth-of-type(2) {
-  overflow: hidden;
+/* main:nth-of-type(1) section p:first-of-type {
+  opacity: 0;
+  position: absolute;
 }
+
+main:nth-of-type(1) section:hover p:first-of-type {
+  opacity: 1;
+  transition: 2s linear;
+  position: relative;
+} */
 
 section > div div:nth-of-type(2) p:first-of-type {
   font-size: 1.2em;
-  margin-top: 1em;
+  margin: 1em 0 0 0;
+
+  /* display: none; */
 }
 
 section > div div:nth-of-type(2) p:first-of-type span:first-of-type {
-  margin-bottom: 4px;
+  margin: 0 0 4px 0;
 }
 
 section > div div:nth-of-type(2) p:nth-of-type(2) {
   font-weight: 300;
-  margin-top: 2em;
+  margin: 2em 0 0 0;
   opacity: 0.9;
 }
 
 /* FOOTER */
 footer {
   position: absolute;
-  z-index: 1;
   bottom: 0;
   width: 100vw;
   height: 5em;
   display: flex;
   justify-content: space-between;
+  z-index: 1;
 }
 
 footer button {
@@ -309,11 +316,11 @@ footer button {
 }
 
 footer button:nth-of-type(1) {
-  margin-left: 2em;
+  margin: 0 0 0 2em;
 }
 
 footer button:nth-of-type(2) {
-  margin-right: 2em;
+  margin: 0 2em 0 0;
 }
 
 footer button > div {
@@ -328,7 +335,7 @@ footer button > div {
   align-items: center;
   justify-content: center;
   padding: 0;
-  transition: 0.4s ease;
+  transition: 0.2s ease;
 }
 
 /* BUTTON FLIP OUT */
@@ -367,7 +374,7 @@ footer button:hover > span {
 }
 
 footer button:hover > div {
-  background: rgba(var(--blackRGB), 1);
+  background: var(--black);
 }
 
 footer button:first-of-type > span {
@@ -379,6 +386,21 @@ footer button:first-of-type > span {
 
 footer button:first-of-type div span {
   transform: rotate(180deg);
+}
+
+#cursor {
+  width: 1.2em;
+  height: 1.2em;
+  border: 2px solid var(--white);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+
+  z-index: 2;
 }
 
 /* desktop first  */
