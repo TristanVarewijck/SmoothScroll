@@ -9,36 +9,35 @@ const scroll = new LocomotiveScroll({
 });
 
 const navigationTrigger = document.getElementsByClassName("menuButton");
-console.log(navigationTrigger);
 
-navigationTrigger[0].addEventListener("click", openNavigation);
+// open the menu
+navigationTrigger[0].addEventListener("click", function () {
+  gsap.fromTo(
+    "#overlay-container div",
+    { height: 0 },
+    {
+      duration: 1,
+      stagger: 0.4,
+      height: "100vh",
+      zIndex: 99,
+      y: "0",
+    }
+  );
+});
 
-const overlays = document.querySelectorAll("#overlay-container div");
-let delay = 0;
+// close the menu
 
-function openNavigation() {
-  overlays.forEach((overlay) => {
-    delay++;
-
-    gsap.fromTo(
-      overlay,
-      { height: 0 },
-      {
-        duration: 1,
-        delay: delay / 3,
-        height: "100vh",
-        zIndex: 99,
-        y: "0",
-      }
-    );
-  });
-}
-
-// function closeNavigation() {
-
-// }
-
-//tweens from width 0 to 100 and height 0 to 200
+// document.querySelectorAll(".box").forEach(function(box) {
+//   box.addEventListener("click", function() {
+//     gsap.to(".box", {
+//       duration: 0.5,
+//       opacity: 0,
+//       y: -100,
+//       stagger: 0.1,
+//       ease: "back.in"
+//     });
+//   });
+// });
 
 // 1. 3 rows of divs
 // 2. animation - delay on each div
