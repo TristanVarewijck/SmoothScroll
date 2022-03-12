@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tristan Varewijck - Portfolio</title>
-    <script src="https://unpkg.com/locomotive-scroll@4.1.3/dist/locomotive-scroll.min.js"></script>
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/locomotiveConfig.css" />
     <link
@@ -148,9 +147,16 @@
       </section>
     </main>
 
+    <!-- Menu overlay -->
+    <div id="overlay-container">
+      <div><h1>About</h1></div>
+      <div><h1>Cases</h1></div>
+      <div><h1>Contact</h1></div>
+    </div>
+
     <footer>
       <!-- to left button -->
-      <button>
+      <button data-scroll-to>
         <!-- animation -->
         <span>More Cases</span>
         <div>
@@ -159,7 +165,7 @@
       </button>
 
       <!-- to right button -->
-      <button>
+      <button data-scroll-to data-scroll-call="logger()">
         <!-- animation -->
         <span>More Cases</span>
         <div>
@@ -170,7 +176,9 @@
 
     <div id="cursor"></div>
 
-    <!-- </section> -->
+    <!-- <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://unpkg.com/locomotive-scroll@4.1.3/dist/locomotive-scroll.min.js"></script>
     <script src="./scripts/app.js" type="module"></script>
   </body>
 </html>

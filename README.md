@@ -2,7 +2,6 @@ CSS
 
 1. footer and nav remove
 2. text animation
-3.
 
 JS
 
